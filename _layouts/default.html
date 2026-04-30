@@ -6,32 +6,31 @@
   <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-  {% if page.lang == "ru" %}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">{% endif %}
 </head>
 <body>
-<div class="container">
-  <header>
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <nav class="lang-switcher">
-      {% assign current_lang = page.lang | default: site.default_lang %}
-      {% assign current_url = page.url %}
-      {% for lang in site.languages %}
-        {% if lang == current_lang %}
-          <span class="current">{{ lang | upcase }}</span>
-        {% elsif lang == site.default_lang %}
-          <a href="{{ site.url }}{{ site.baseurl }}{{ current_url }}">{{ lang | upcase }}</a>
-        {% else %}
-          <a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ current_url }}">{{ lang | upcase }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
-  </header>
 
-  {{ content }}
+<header>
+<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>
+</header>
 
-  <footer>
-    <a href="https://tomaspica.com">tomaspica.com</a>
-  </footer>
-</div>
+<div class="separator">================================================================================</div>
+
+<nav style="margin: 4px 0;">
+<a href="https://tomaspica.com">← tomaspica.com</a>
+&nbsp;&nbsp;
+{% assign current_lang = page.lang | default: site.default_lang %}
+{% assign current_url = page.url %}
+[lang:
+{% for lang in site.languages %}{% if lang == current_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ current_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ current_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
+</nav>
+
+<div class="separator">================================================================================</div>
+
+{{ content }}
+
+<div class="separator">================================================================================</div>
+
+<footer>[INFO] tomaspica.com/blog</footer>
+
 </body>
 </html>

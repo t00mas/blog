@@ -21,7 +21,7 @@
         {% elsif lang == site.default_lang %}
           <a href="{{ site.url }}{{ site.baseurl }}{{ current_url }}">{{ lang | upcase }}</a>
         {% else %}
-          <a href="{{ site.url }}/{{ lang }}{{ site.baseurl }}{{ current_url }}">{{ lang | upcase }}</a>
+          <a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ current_url }}">{{ lang | upcase }}</a>
         {% endif %}
       {% endfor %}
     </nav>

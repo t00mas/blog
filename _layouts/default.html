@@ -19,14 +19,13 @@
 <a href="https://tomaspica.com">← tomaspica.com</a>
 &nbsp;&nbsp;
 {% assign base_url = page.url %}
-{% for l in site.languages %}
-  {% unless l == site.default_lang %}
-    {% assign lp = "/" | append: l | append: "/" %}
-    {% if base_url contains lp %}
-      {% assign base_url = base_url | remove_first: lp | prepend: "/" %}
-    {% endif %}
-  {% endunless %}
-{% endfor %}
+{% assign _strip_en = page.url | remove_first: "/en/" %}
+{% assign _strip_ru = page.url | remove_first: "/ru/" %}
+{% if _strip_en != page.url %}
+  {% assign base_url = "/" | append: _strip_en %}
+{% elsif _strip_ru != page.url %}
+  {% assign base_url = "/" | append: _strip_ru %}
+{% endif %}
 [lang:
 {% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ base_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ base_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
 </nav>

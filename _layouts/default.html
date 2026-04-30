@@ -18,8 +18,13 @@
 <nav style="margin: 4px 0;">
 <a href="https://tomaspica.com">← tomaspica.com</a>
 &nbsp;&nbsp;
+{% assign base_url = page.url %}
+{% unless site.active_lang == site.default_lang %}
+  {% assign lang_prefix = "/" | append: site.active_lang %}
+  {% assign base_url = page.url | remove_first: lang_prefix %}
+{% endunless %}
 [lang:
-{% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ page.url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
+{% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ base_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ base_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
 </nav>
 
 <div class="separator">================================================================================</div>

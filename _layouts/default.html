@@ -10,7 +10,7 @@
 <body>
 
 <header>
-<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>
+{% if site.active_lang == site.default_lang %}<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% else %}<a class="site-title" href="/{{ site.active_lang }}{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% endif %}
 </header>
 
 <div class="separator">================================================================================</div>

@@ -8,6 +8,7 @@ languages: ["es", "en", "ru"]
 default_lang: "es"
 exclude_from_localization: ["assets", ".github"]
 parallel_localization: true
+relativeize_url: false
 
 permalink: /:year/:month/:day/:title/
 

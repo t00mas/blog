@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang }}">
+<html lang="{{ site.active_lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,10 +18,8 @@
 <nav style="margin: 4px 0;">
 <a href="https://tomaspica.com">← tomaspica.com</a>
 &nbsp;&nbsp;
-{% assign current_lang = page.lang | default: site.default_lang %}
-{% assign current_url = page.url %}
 [lang:
-{% for lang in site.languages %}{% if lang == current_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ current_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ current_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
+{% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ page.url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
 </nav>
 
 <div class="separator">================================================================================</div>

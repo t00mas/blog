@@ -6,6 +6,10 @@ lang: es
 permalink: /boja-parser/
 ---
 
+**TL;DR:** El BOJA publicó las declaraciones de 1.129 candidatos en un PDF difícil de parsear. Escribí un script Python que extrae y estructura los datos, y una web para explorarlos. [Explorar →](https://tomaspica.com/declaraciones-andalucia-2026/) · [Código →](https://github.com/t00mas/declaraciones-andalucia-2026)
+
+---
+
 El 27 de abril de 2026, el Boletín Oficial de la Junta de Andalucía publicó el número 79 C1: 402 páginas con las declaraciones de actividades, bienes e intereses de los 1.129 candidatos a las elecciones del 17 de mayo. Datos públicos, en teoría accesibles para cualquier ciudadano. En la práctica, un PDF.
 
 No cualquier PDF. Un PDF generado a partir de formularios escaneados y recompuestos, con columnas que `pdftotext` extrae en orden incorrecto, cabeceras del boletín que se intercalan con los datos, y secciones enteras que aparecen desplazadas varias páginas respecto a donde deberían estar.
@@ -61,6 +65,6 @@ Un fichero `candidates.json` con 1.129 objetos estructurados: datos financieros 
 
 Sobre ese JSON, una aplicación web de una sola página sin dependencias de servidor ni paso de compilación: tabla con búsqueda y filtros, comparativa por partido, señales de alerta para patrones financieros llamativos, y diagrama de dispersión con todos los candidatos coloreados por partido.
 
-**[→ Explorar las declaraciones](https://tomaspica.com/declaraciones-andalucia-2026/)**
+**[→ Explorar las declaraciones](https://tomaspica.com/declaraciones-andalucia-2026/)** · **[→ Repositorio](https://github.com/t00mas/declaraciones-andalucia-2026)**
 
-El código del parser y la web están en el repositorio, bajo licencia MIT. Los datos son públicos (BOJA).
+El código es MIT. Los datos son públicos (BOJA).

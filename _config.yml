@@ -1,0 +1,19 @@
+title: Tomas Pica
+description: Notes on code, data, and civic tech.
+baseurl: "/blog"
+url: "https://tomaspica.com"
+
+# jekyll-polyglot
+languages: ["es", "en", "ru"]
+default_lang: "es"
+exclude_from_localization: ["assets", ".github"]
+parallel_localization: true
+
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-polyglot
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,14 @@
+---
+layout: default
+lang: ru
+permalink: /
+---
+<ul class="post-list">
+{% assign posts = site.posts | where: "lang", "ru" %}
+{% for post in posts %}
+  <li>
+    <span class="date">{{ post.date | date: "%d %b %Y" }}</span>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>

@@ -10,13 +10,13 @@
 <body>
 
 <header>
-{% if site.active_lang == site.default_lang %}<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% else %}<a class="site-title" href="{{ site.baseurl }}/{{ site.active_lang }}/">&gt; tomaspica.com/blog</a>{% endif %}
+<a class="site-title" href="https://tomaspica.com">&gt; tomaspica.com</a>
 </header>
 
 <div class="separator">================================================================================</div>
 
 <nav style="margin: 4px 0;">
-<a href="https://tomaspica.com">← tomaspica.com</a>
+{% if site.active_lang == site.default_lang %}<a href="{{ site.baseurl }}/">← tomaspica.com/blog</a>{% else %}<a href="{{ site.baseurl }}/{{ site.active_lang }}/">← tomaspica.com/blog</a>{% endif %}
 &nbsp;&nbsp;
 {% assign base_url = page.url %}
 {% assign _strip_en = page.url | remove_first: "/en/" %}

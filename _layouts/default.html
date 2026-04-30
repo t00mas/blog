@@ -10,7 +10,7 @@
 <body>
 
 <header>
-{% if site.active_lang == site.default_lang %}<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% else %}<a class="site-title" href="/{{ site.active_lang }}{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% endif %}
+{% if site.active_lang == site.default_lang %}<a class="site-title" href="{{ site.baseurl }}/">&gt; tomaspica.com/blog</a>{% else %}<a class="site-title" href="{{ site.baseurl }}/{{ site.active_lang }}/">&gt; tomaspica.com/blog</a>{% endif %}
 </header>
 
 <div class="separator">================================================================================</div>
@@ -27,7 +27,7 @@
   {% assign base_url = "/" | append: _strip_ru %}
 {% endif %}
 [lang:
-{% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a href="{{ site.url }}{{ site.baseurl }}{{ base_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ base_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
+{% for lang in site.languages %}{% if lang == site.active_lang %}<span class="lang-switcher"><span class="current">{{ lang }}</span></span>{% else %}<span class="lang-switcher">{% if lang == site.default_lang %}<a hreflang="{{ site.default_lang }}" href="{{ site.url }}{{ site.baseurl }}{{ base_url }}">{{ lang }}</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ base_url }}">{{ lang }}</a>{% endif %}</span>{% endif %}{% unless forloop.last %} {% endunless %}{% endfor %}]
 </nav>
 
 <div class="separator">================================================================================</div>

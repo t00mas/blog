@@ -6,7 +6,7 @@ lang: en
 permalink: /boja-parser/
 ---
 
-On April 27, 2026, the Official Gazette of the Regional Government of Andalusia (BOJA) published issue 79 C1: over 2,000 pages of financial declarations from the 1,129 candidates running in the May 17 regional elections. Public data, theoretically accessible to any citizen. In practice, a PDF.
+On April 27, 2026, the Official Gazette of the Regional Government of Andalusia (BOJA) published issue 79 C1: 402 pages of financial declarations from the 1,129 candidates running in the May 17 regional elections. Public data, theoretically accessible to any citizen. In practice, a PDF.
 
 Not just any PDF. One assembled from scanned forms and reformatted, with columns that `pdftotext` extracts in the wrong order, gazette headers interleaved with candidate data, and entire sections displaced several pages from where they should be.
 

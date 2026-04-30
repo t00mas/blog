@@ -6,7 +6,7 @@ lang: es
 permalink: /boja-parser/
 ---
 
-El 27 de abril de 2026, el Boletín Oficial de la Junta de Andalucía publicó el número 79 C1: más de 2.000 páginas con las declaraciones de actividades, bienes e intereses de los 1.129 candidatos a las elecciones del 17 de mayo. Datos públicos, en teoría accesibles para cualquier ciudadano. En la práctica, un PDF.
+El 27 de abril de 2026, el Boletín Oficial de la Junta de Andalucía publicó el número 79 C1: 402 páginas con las declaraciones de actividades, bienes e intereses de los 1.129 candidatos a las elecciones del 17 de mayo. Datos públicos, en teoría accesibles para cualquier ciudadano. En la práctica, un PDF.
 
 No cualquier PDF. Un PDF generado a partir de formularios escaneados y recompuestos, con columnas que `pdftotext` extrae en orden incorrecto, cabeceras del boletín que se intercalan con los datos, y secciones enteras que aparecen desplazadas varias páginas respecto a donde deberían estar.
 
